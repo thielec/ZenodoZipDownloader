@@ -1,0 +1,16 @@
+__pycache__/
+venv*/
+.pytest_cache/
+dist/
+build/
+.coverage
+.python-version
+*.egg
+*.pyc
+*.pyo
+*.pyd
+*.swp
+.vscode/
+*.egg-info/
+requirements.txt
+zenodozipdownloader/_version.py

@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=61.0", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "zenodozipdownloader"
+dynamic = ["version"]
+description = "Download and extract (single) files from ZIP archives in Zenodo records."
+authors = [
+    { name = "Jan Christoph Thiele", email = "jan.thiele@chem.ox.ac.uk" },
+]
+readme = { file = "README.md", content-type = "text/markdown" }
+license = "MIT"
+requires-python = ">=3.10"
+dependencies = ["requests", "remotezip"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Scientific/Engineering",
+]
+keywords = ["zenodo", "zip", "downloader", "zenodo-zip"]
+
+[project.optional-dependencies]
+tqdm = ["tqdm"]
+dev = ["pre-commit", "black"]
+
+[tool.black]
+line-length = 88
+target-version = ["py310"]
+
+[project.urls]
+Homepage = "https://github.com/thielec/zenodozipdownloader"
+
+[project.scripts]
+zenodozipdownloader = "zenodozipdownloader.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["zenodozipdownloader"]
+
+[tool.setuptools_scm]
+write_to = "zenodozipdownloader/_version.py"
+write_to_template = "__version__ = \"{version}\""
+fallback_version = "0.0.0"
