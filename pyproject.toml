@@ -43,5 +43,5 @@ include = ["zenodozipdownloader"]
 
 [tool.setuptools_scm]
 write_to = "zenodozipdownloader/_version.py"
-write_to_template = "__version__ = \"{version}\""
+write_to_template = "__version__ = \"{version}\"\n"
 fallback_version = "0.0.0"
