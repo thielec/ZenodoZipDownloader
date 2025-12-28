@@ -54,7 +54,7 @@ jobs:
       # - name: Run tests
       #   run: python -m pytest -q # This integration test often fails due to network issues / rate limiting
 
-      - name: Build and check metadata 
+      - name: Build and check metadata
         run: |
           python -m build
           python -m twine check dist/*
