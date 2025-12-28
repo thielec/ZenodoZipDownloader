@@ -45,3 +45,4 @@ include = ["zenodozipdownloader"]
 write_to = "zenodozipdownloader/_version.py"
 write_to_template = "__version__ = \"{version}\"\n"
 fallback_version = "0.0.0"
+local_scheme = "no-local-version"
