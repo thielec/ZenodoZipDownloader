@@ -16,6 +16,12 @@ on:
       - '**.py'
       - 'pyproject.toml'
       - 'README.md'
+  workflow_dispatch:
+    inputs:
+      publish_target:
+        description: 'Which target to publish: testpypi, pypi, or both'
+        required: false
+        default: 'testpypi'
 
 jobs:
   build:
@@ -46,7 +52,9 @@ jobs:
   publish-to-testpypi:
     name: Publish to TestPyPI (branch main)
     needs: build
-    if: github.ref == 'refs/heads/main'
+    if: >-
+      github.ref == 'refs/heads/main' || (github.event_name == 'workflow_dispatch' &&
+      (github.event.inputs.publish_target == 'testpypi' || github.event.inputs.publish_target == 'both'))
     runs-on: ubuntu-latest
     # Only the job that performs publishing needs id-token write permission for OIDC
     permissions:
@@ -71,7 +79,9 @@ jobs:
   publish-to-pypi:
     name: Publish to PyPI (tag)
     needs: build
-    if: startsWith(github.ref, 'refs/tags/')
+    if: >-
+      startsWith(github.ref, 'refs/tags/') || (github.event_name == 'workflow_dispatch' &&
+      (github.event.inputs.publish_target == 'pypi' || github.event.inputs.publish_target == 'both'))
     runs-on: ubuntu-latest
     permissions:
       id-token: write  # mandatory for Trusted Publishing (OIDC)
