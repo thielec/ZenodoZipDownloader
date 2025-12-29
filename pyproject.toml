@@ -12,7 +12,7 @@ authors = [
 readme = { file = "README.md", content-type = "text/markdown" }
 license = "MIT"
 requires-python = ">=3.10"
-dependencies = ["requests >= 2.28", "remotezip"]
+dependencies = ["requests >= 2.28", "urllib3 ~= 2.5.0", "remotezip"]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Science/Research",
