@@ -1,6 +1,6 @@
-![PyPI](https://img.shields.io/pypi/v/zenodozipdownloader)
-![License](https://img.shields.io/github/license/thielec/zenodozipdownloader)
-![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)
+[![PyPI](https://img.shields.io/pypi/v/zenodozipdownloader)](https://pypi.org/project/zenodozipdownloader/)
+[![License](https://img.shields.io/github/license/thielec/zenodozipdownloader)](https://github.com/thielec/zenodozipdownloader/blob/main/LICENSE)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 # ZenodoZipDownloader
 
