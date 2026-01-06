@@ -12,10 +12,6 @@ on:
       - main
     tags:
       - 'v*'
-    paths:
-      - '**.py'
-      - 'pyproject.toml'
-      - 'README.md'
   workflow_dispatch:
     inputs:
       publish_target:
@@ -34,6 +30,8 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
+          fetch-depth: 0
+          fetch-tags: true
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -52,7 +50,7 @@ jobs:
         run: python -m pip install --upgrade .[dev]
 
       # - name: Run tests
-        # run: python -m pytest -q # This integration sometimes fails due to network issues / rate limiting
+      #   run: python -m pytest -q # This integration sometimes fails due to network issues / rate limiting
 
       - name: Build and check metadata
         run: |
@@ -67,6 +65,8 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
+          fetch-depth: 0
+          fetch-tags: true
 
       - name: Set up Python
         uses: actions/setup-python@v5
