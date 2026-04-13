@@ -23,7 +23,7 @@ pip install zenodozipdownloader
 Or from source:
 
 ```sh
-git clone https://github.com/yourusername/zenodozipdownloader.git
+git clone https://github.com/thielec/zenodozipdownloader.git
 cd zenodozipdownloader
 pip install .
 ```
